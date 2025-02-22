@@ -1,0 +1,11 @@
+<h1>Places I've Been</h1>
+
+<ul>
+  <%- for place in Place.all %>
+    <li>
+      <a href="/places/<%= place["id"] %>"><%= place["name"].inspect %></a>
+    </li>
+  <%- end %>
+</ul>
+
+<a href="/places/new">Add a New Place</a>
