@@ -1,0 +1,24 @@
+<h1>Add a new entry</h1>
+
+<form action="/entries" method="POST">
+  <input type="hidden" name="place_id" value="<%= @entry["place_id"] %>">
+
+  <label for="title">Title:</label>
+  <input type="text" name="title" id="title" required>
+  
+  <br><br>
+
+  <label for="description">Description:</label>
+  <textarea name="description" id="description" required></textarea>
+  
+  <br><br>
+
+  <label for="occurred_on">Date:</label>
+  <input type="date" name="occurred_on" id="occurred_on" required>
+  
+  <br><br>
+  <input type="submit" value="Save Entry">
+</form>
+
+<br>
+<a href="/places/<%= @entry["place_id"] %>">Back to place</a>

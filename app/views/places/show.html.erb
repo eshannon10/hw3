@@ -1,0 +1,23 @@
+<h1><%= @place["name"] %></h1>
+
+<h2>Entries</h2>
+
+<ul style="list-style: none; padding: 0;"> <%# Formatting improvement: removed bullet points, not covered in class %>
+
+  <%- for entry in Entry.all %>
+    <%- if entry["place_id"] == @place["id"] %>
+
+    <%# Note: I added more formatting improvements for better readability, although this was not covered in class. %>
+
+      <li style="margin-bottom: 15px; padding: 12px; border-left: 3px solid #555; background-color: #f9f9f9; border-radius: 5px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);">
+        <strong style="font-size: 18px; color: #222;"><%= entry["title"] %></strong>  
+        <span style="color: #666; font-size: 14px;"> • <%= entry["occurred_on"] %></span>
+        <p style="margin-top: 5px; color: #444;"><%= entry["description"] %></p>
+      </li>
+    <%- end %>
+  <%- end %>
+</ul>
+
+<p><a href="/entries/new?place_id=<%= @place["id"] %>">Add a new entry</a></p>
+
+<p><a href="/places">Back to places</a></p>

@@ -3,9 +3,9 @@
 <ul>
   <%- for place in Place.all %>
     <li>
-      <a href="/places/<%= place["id"] %>"><%= place["name"].inspect %></a>
+      <a href="/places/<%= place["id"] %>"><%= place["name"] %></a>
     </li>
   <%- end %>
 </ul>
 
-<a href="/places/new">Add a New Place</a>
+<a href="/places/new">Add a new place</a>
